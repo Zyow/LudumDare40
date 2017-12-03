@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class sc_seedPlant : MonoBehaviour {
 
-	public GameObject myExplosion; 
-	public GameObject prefabExplosion;
+
+	public GameObject prefabSeed;
+	public float checkRangeSeed = 2;
 	private ParticleCollisionEvent[] collisionEvents = new ParticleCollisionEvent[16];
 	private ParticleSystem partSyst;
 
@@ -13,7 +14,7 @@ public class sc_seedPlant : MonoBehaviour {
 	{
 		partSyst = GetComponent<ParticleSystem>();
 	}
-
+	
  void OnParticleCollision(GameObject other) {
 	 
 	 //int safeLength = particleSystem.safeCollisionEventSize;
@@ -28,13 +29,14 @@ public class sc_seedPlant : MonoBehaviour {
 
      while (i < numCollisionEvents) {
          Vector3 collisionHitLoc = collisionEvents[i].intersection;
-
+		
 		 if (other.tag == "canSeed")
 		 {
-         	myExplosion = Instantiate (prefabExplosion, collisionHitLoc, Quaternion.identity) as GameObject;
+			Instantiate(prefabSeed, collisionHitLoc, Quaternion.identity);
 		 }
 
          i++;
      }
  }
+
 }

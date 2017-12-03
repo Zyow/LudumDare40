@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - canSeed
+  - Seed
   layers:
   - Default
   - TransparentFX
@@ -14,8 +15,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Check
+  - Particles
   - 
   - 
   - 
@@ -41,4 +42,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: 3D
+    uniqueID: 2761444115
+    locked: 0
+  - name: Plant
+    uniqueID: 1036814019
     locked: 0

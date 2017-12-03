@@ -11,6 +11,8 @@ public class sc_PlayerMove : MonoBehaviour {
     public float DashDistance = 5f;
     public LayerMask Ground;
 
+    public ParticleSystem partSysSeed;
+
     private Rigidbody _body;
     private Vector3 _inputs = Vector3.zero;
     private bool _isGrounded = true;
@@ -32,6 +34,16 @@ public class sc_PlayerMove : MonoBehaviour {
         _inputs.z = Input.GetAxis("Vertical");
         if (_inputs != Vector3.zero)
             transform.forward = _inputs;
+
+        if ( Input.GetButtonDown("Jump"))
+        {
+            partSysSeed.Play();
+        }
+
+           if ( Input.GetButtonUp("Jump"))
+        {
+            partSysSeed.Stop();
+        }
 
        /* if (Input.GetButtonDown("Jump") && _isGrounded)
         {
